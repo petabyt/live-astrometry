@@ -2,34 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 
-/*
-Get apps:
-sudo apt install astrometry.net gphoto2
-
-Get catalog index file: (for close-up, not widefield)
-cd /usr/share/astrometry; sudo wget http://broiler.astrometry.net/~dstn/4100/index-4107.fits http://broiler.astrometry.net/~dstn/4100/index-4108.fits
-
-tcc -run astro.c
-gcc astro.c; ./a.out
-*/
-
-void clean() {
-	system("rm -rf *.axy *.png *.cr2 *.xyls *.rdls *.solved *.wcs tmp* *.match *.corr *.new");
-}
 
 int main() {
-	clean();
-	printf("Take picture? (y) ");
-	if (getchar() == 'y') {
-		system("rm -rf *.jpg");
-		system("gphoto2 --capture-image-and-download");
-		system("sleep 1");
-	}
-
-	system("solve-field --downsample 2 --objs 1000 --crpix-center --no-plots capt0000.jpg");
-
-	puts("Parsing WCS file.");
-
 	char ra[50] = {0};
 	char dec[50] = {0};
 	char scale[50] = {0};
