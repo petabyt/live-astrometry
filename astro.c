@@ -28,7 +28,7 @@ int main() {
 	puts("Printing some online viewer links:");
 	printf("http://worldwidetelescope.org/webclient/#/ra=%f&dec=%f&fov=0.26421\n", fra -  251.568524, fdec);
 	printf("https://www.legacysurvey.org/viewer/?ra=%f&dec=%f&layer=unwise-neo6\n", fra, fdec);
-
+#if 0
 	// TODO: figure out rotation
 	printf("Upload and view overlay? (y) ");
 	if (getchar() == 'y') {
@@ -41,4 +41,5 @@ int main() {
 			"&name=capt0000.jpg&imageurl=%s&ra=%f&dec=%f&x=3270.6"
 			"&y=1418.4&rotation=144.92&thumb=%s\n", fscale, buffer, fra, fdec, buffer);
 	}	
+#endif
 }
