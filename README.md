@@ -3,8 +3,7 @@ Live Astrometry Script (Gphoto2 + Astrometry.net)
 
 # Run:
 ```
-tcc -run astro.c
-gcc astro.c; ./a.out
+make
 ```
 
 # Upload and overlay:
